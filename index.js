@@ -40,6 +40,13 @@ To save you from having to count the items above, you can assume that length of 
 
 i.e. is31Flavors(originalFlavors) will return TRUE.*/
 
+function copy(arr){
+    const newarr = [...originalFlavors];
+    console.log(newarr);
+
+}
+copy(originalFlavors)
+
 function is31Flavors(arr){
   if(arr.length === 31){
       return true
@@ -107,14 +114,14 @@ Hint: You can use .splice() for this
 
 */
 
-function removeFlavorByName(arr,str){
-for(let i = 0; i < arr.length; i++)
-if(arr[i].includes(str)){
- arr.splice(i,1);
-}
-return arr
-}
-console.log(removeFlavorByName(originalFlavors, 'Vanilla'))
+//function removeFlavorByName(arr,str){
+//for(let i = 0; i < arr.length; i++)
+//if(arr[i].includes(str)){
+// arr.splice(i,1);
+//}
+///return arr
+//}
+//console.log(removeFlavorByName(originalFlavors, 'Vanilla'))
 
 /* Task 6: With all of these changes going on, we don't want to lose track of the actual, original 31 flavors. Write a function called copy that makes a copy of the array. 
 
@@ -124,12 +131,12 @@ Your function should accept:
 
 and should return a new array that is identical to the old array. You can name the new array however you'd like. */
 
-function copy(/*code here*/){
-
-    /*code here*/
+function copy(newarr, orig){
+    const newarr1 = [...originalFlavors];
+    console.log(newarr1);
 
 }
-
+copy(originalFlavors)
 /* Task 7: July 7th is "World Chocolate Day" and Baskin Robins wants to create promotional materials highlighting all of their chocolate flavors. Write a function that checks every item in the array for a given string and returns a new array called filteredArray with just these values. Rather than hardcoding "chocolate" into your function, pass a string as a parameter, and invoke with the argument "chocolate". This way you could also filter for "Vanilla", "Sherbert", etc. when those holidays roll around.
 
 Your function should accept: 
@@ -145,27 +152,29 @@ DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem.
 
 hint - you can use the .includes method to help you solve this */
 
-function filterByWord(/*code here*/){
-
-    /*code here*/
-
+function filterByWord(arr,str){
+    let filteredAway = []
+for(let i = 0;  i < arr.length; i++)
+    if(arr[i].includes(str)){
+    return filteredAway.unshift(arr[i]);
+    }
+return filteredAway
 }
 
-
+console.log(filterByWord(originalFlavors, "Chocolate"));
 
 /* 🧁🍦🍨 STRETCH 🍨🍦🍫*/ 
 
-/* STRETCH 1: Write a function that returns the average number of words in an array. You should be able to use this function for any array, but can test with originalFlavors.
-
+/* STRETCH 1: Write a function that returns the average number of words in an array. You should be able to use this function for any array, but can test with originalFlavors
 Your function should accept: 
 
 (1) an array
-
+need the array length nd the qwords peer add up all the\at then divide by the array.legth -1
 and should return the average number of words per item in the array. 
 
 For example, getAverageWordLength(originalFlavors) should return a number between 0 and 3. */
 
-function getAverageWordLength(/*code here*/){
+function getAverageWordLength(array){
 
     /*code here*/
 
